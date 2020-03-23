@@ -1,7 +1,10 @@
 mutation:
 	mutmut run --paths-to-mutate dummy_transformations
 
-.PHONY: mutation tests
+.PHONY: install mutation tests
 
-tests:
+install:
+	pip install --editable .
+
+tests: install
 	pytest --verbose
