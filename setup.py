@@ -1,10 +1,10 @@
 
 from setuptools import setup, find_packages
 
-setuptools.setup(
+setup(
     name="dummy_transformations",
     version="0.1.0",
     packages=["dummy_transformations"],
     author="Fernando Alvarez",
-    python_requires='>=3.6',
+    python_requires='>=3.6'
 )
