@@ -10,5 +10,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Construye imagen
       run: docker build --tag islasgeci/dummy_transformations .
-    - name: Ejecuta objetivo principal del Makefile
-      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make
+    - name: Corre pruebas
+      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make tests
+    - name: Verifica el formato
+      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make lint
