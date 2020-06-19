@@ -11,3 +11,4 @@ tests: install
 
 lint:
 	black --check dummy_transformations
+	black --check tests
