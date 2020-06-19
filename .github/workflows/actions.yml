@@ -12,5 +12,7 @@ jobs:
       run: docker build --tag islasgeci/dummy_transformations .
     - name: Corre pruebas
       run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make tests
+    - name: Verifica resistencia a mutaciones
+      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make mutants
     - name: Verifica el formato
       run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make lint

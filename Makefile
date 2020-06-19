@@ -1,7 +1,7 @@
-mutation:
+mutants:
 	mutmut run --paths-to-mutate dummy_transformations
 
-.PHONY: install lint mutation tests
+.PHONY: install lint mutants tests
 
 install:
 	pip install --editable .
