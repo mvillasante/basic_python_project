@@ -1,7 +1,7 @@
 mutants:
 	mutmut run --paths-to-mutate dummy_transformations
 
-.PHONY: install lint mutants tests
+.PHONY: install format mutants tests
 
 install:
 	pip install --editable .
@@ -9,6 +9,6 @@ install:
 tests: install
 	pytest --verbose
 
-lint:
+format:
 	black --check dummy_transformations
 	black --check tests

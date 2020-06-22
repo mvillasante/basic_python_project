@@ -15,4 +15,4 @@ jobs:
     - name: Verifica resistencia a mutaciones
       run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make mutants
     - name: Verifica el formato
-      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make lint
+      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make format
