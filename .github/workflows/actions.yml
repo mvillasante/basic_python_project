@@ -1,4 +1,3 @@
-
 name: Conservación de Islas
 on: [push, pull_request]
 
@@ -9,10 +8,10 @@ jobs:
     - name: Copia repositorio
       uses: actions/checkout@v2
     - name: Construye imagen
-      run: docker build --tag islasgeci/dummy_transformations .
-    - name: Corre pruebas
-      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make tests
-    - name: Verifica resistencia a mutaciones
-      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make mutants
+      run: docker build --tag islasgeci .
     - name: Verifica el formato
-      run: docker run --volume ${PWD}:/workdir islasgeci/dummy_transformations make format
+      run: docker run islasgeci make format
+    - name: Corre pruebas
+      run: docker run islasgeci make tests
+    - name: Evalua resistencia a mutaciones
+      run: docker run islasgeci make mutants
