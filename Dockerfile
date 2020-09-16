@@ -7,5 +7,5 @@ RUN pip install \
     flake8 \
     mutmut \
     pylint \
-    pytest-cov \
-    pytest==5.0.1
+    pytest \
+    pytest-cov
