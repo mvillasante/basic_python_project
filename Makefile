@@ -21,8 +21,16 @@ install:
 lint:
 	flake8 --max-line-length 100 ${module}
 	flake8 --max-line-length 100 tests
-	pylint ${module}
-	pylint tests
+	pylint \
+        --disable=bad-continuation \
+        --disable=missing-function-docstring \
+        --disable=missing-module-docstring \
+        ${module}
+	pylint \
+        --disable=bad-continuation \
+        --disable=missing-function-docstring \
+        --disable=missing-module-docstring \
+        test
 
 mutants:
 	mutmut run --paths-to-mutate ${module}
