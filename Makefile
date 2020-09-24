@@ -1,9 +1,15 @@
 all: mutants
 
-.PHONY: all clean format install lint mutants tests
+.PHONY: all check clean format install lint mutants tests
 
 module = dummy_transformations
 codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+
+check:
+	black --check --line-length 100 ${module}
+	black --check --line-length 100 tests
+	flake8 --max-line-length 100 ${module}
+	flake8 --max-line-length 100 tests
 
 clean:
 	rm --force .mutmut-cache
@@ -12,15 +18,13 @@ clean:
 	rm --recursive --force test/__pycache__
 
 format:
-	black --check --line-length 100 ${module}
-	black --check --line-length 100 tests
+	black --line-length 100 ${module}
+	black --line-length 100 tests
 
 install:
 	pip install --editable .
 
 lint:
-	flake8 --max-line-length 100 ${module}
-	flake8 --max-line-length 100 tests
 	pylint \
         --disable=bad-continuation \
         --disable=missing-class-docstring \
