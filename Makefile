@@ -5,6 +5,15 @@ all: mutants
 module = dummy_transformations
 codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
 
+define lint
+	pylint \
+        --disable=bad-continuation \
+        --disable=missing-class-docstring \
+        --disable=missing-function-docstring \
+        --disable=missing-module-docstring \
+        ${1}
+endef
+
 check:
 	black --check --line-length 100 ${module}
 	black --check --line-length 100 tests
@@ -24,19 +33,9 @@ format:
 install:
 	pip install --editable .
 
-lint:
-	pylint \
-        --disable=bad-continuation \
-        --disable=missing-class-docstring \
-        --disable=missing-function-docstring \
-        --disable=missing-module-docstring \
-        ${module}
-	pylint \
-        --disable=bad-continuation \
-        --disable=missing-class-docstring \
-        --disable=missing-function-docstring \
-        --disable=missing-module-docstring \
-        test
+linter:
+	$(call lint, ${module})
+	$(call lint, tests)
 
 mutants:
 	mutmut run --paths-to-mutate ${module}
