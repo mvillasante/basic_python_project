@@ -1,6 +1,6 @@
 all: mutants
 
-.PHONY: all check clean format install lint mutants tests
+.PHONY: all check clean coverage format install lint mutants tests
 
 module = dummy_transformations
 codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
@@ -26,6 +26,10 @@ clean:
 	rm --recursive --force ${module}/__pycache__
 	rm --recursive --force test/__pycache__
 
+coverage: install
+	pytest --cov=${module} --cov-report=xml --verbose && \
+	codecov --token=${codecov_token}
+
 format:
 	black --line-length 100 ${module}
 	black --line-length 100 tests
@@ -41,5 +45,4 @@ mutants:
 	mutmut run --paths-to-mutate ${module}
 
 tests: install
-	pytest --cov=${module} --cov-report=xml --verbose && \
-	codecov --token=${codecov_token}
+	pytest --verbose
