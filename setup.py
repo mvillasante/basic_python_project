@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 
 setup(
     name="dummy_transformations",
-    version="0.1.0",
+    version="0.3.0",
     packages=["dummy_transformations"],
-    author="Fernando Alvarez",
+    author="Ciencia de Datos • GECI",
     python_requires='>=3.6'
 )
