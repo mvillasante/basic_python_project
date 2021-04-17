@@ -7,7 +7,7 @@ all: check coverage mutants
 		coverage \
 		format \
 		install \
-		lint \
+		linter \
 		mutants \
 		tests
 
