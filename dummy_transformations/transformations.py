@@ -1,2 +1,2 @@
-def add_offset(x: int, y: float) -> str:
+def add_offset(x: int, y: int) -> int:
     return x + y
