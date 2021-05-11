@@ -32,6 +32,7 @@ check:
 	mypy tests
 
 clean:
+	rm --force --recursive .*_cache
 	rm --force --recursive ${module}.egg-info
 	rm --force --recursive ${module}/__pycache__
 	rm --force --recursive tests/__pycache__
