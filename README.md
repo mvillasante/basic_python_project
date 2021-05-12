@@ -11,9 +11,9 @@ Para usar este repo como _cookie cutters_ debemos hacer lo siguiente:
   - `Makefile`
   - `pyproject`
   - `tests\test_transformation.py`
-7. Cambia `dummy-transformation.py` del _home-page_ del archivo `pyproject` por el del nuevo módulo
+7. Cambia `dummy-transformation.py` del _home-page_ del archivo `pyproject.toml` por el del nuevo módulo
 1. Cambia el nombre del archivo `dummy_transformation\transformation.py` al nombre del primer
-   archivo del nuevo módulo.
+   archivo del nuevo módulo
 1. Cambia la descripción del archivo `dummy_transformation\__init__.py`
 1. Cambia el nombre de la carpeta `dummy_transformation` al nombre del nuevo módulo
 1. Cambia el `codecov_token` del archivo `Makefile`
