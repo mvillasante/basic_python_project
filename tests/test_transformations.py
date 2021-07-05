@@ -2,8 +2,8 @@ import dummy_transformations as dt
 
 
 def test_add_offset():
-    a = 1
-    b = 2
-    expected = a + b
-    obtained = dt.add_offset(a, b)
+    augend = 1
+    addend = 2
+    expected = augend + addend
+    obtained = dt.add_offset(augend, addend)
     assert expected == obtained

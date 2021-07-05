@@ -1,6 +1,15 @@
-all: mutants
+all: check coverage mutants
 
-.PHONY: all check clean coverage format install lint mutants tests
+.PHONY: \
+		all \
+		check \
+		clean \
+		coverage \
+		format \
+		install \
+		linter \
+		mutants \
+		tests
 
 module = dummy_transformations
 codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
@@ -19,12 +28,16 @@ check:
 	black --check --line-length 100 tests
 	flake8 --max-line-length 100 ${module}
 	flake8 --max-line-length 100 tests
+	mypy ${module}
+	mypy tests
 
 clean:
+	rm --force --recursive .*_cache
+	rm --force --recursive ${module}.egg-info
+	rm --force --recursive ${module}/__pycache__
+	rm --force --recursive tests/__pycache__
 	rm --force .mutmut-cache
-	rm --recursive --force ${module}.egg-info
-	rm --recursive --force ${module}/__pycache__
-	rm --recursive --force test/__pycache__
+	rm --force coverage.xml
 
 coverage: install
 	pytest --cov=${module} --cov-report=xml --verbose && \
@@ -35,7 +48,7 @@ format:
 	black --line-length 100 tests
 
 install:
-	pip install --editable .
+	pip install .
 
 linter:
 	$(call lint, ${module})
