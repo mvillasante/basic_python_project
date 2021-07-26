@@ -6,9 +6,9 @@ all: check coverage mutants
 		clean \
 		coverage \
 		format \
-		install \
 		linter \
 		mutants \
+		setup \
 		tests
 
 module = dummy_transformations
@@ -39,7 +39,7 @@ clean:
 	rm --force .mutmut-cache
 	rm --force coverage.xml
 
-coverage: install
+coverage: setup
 	pytest --cov=${module} --cov-report=xml --verbose && \
 	codecov --token=${codecov_token}
 
@@ -47,15 +47,15 @@ format:
 	black --line-length 100 ${module}
 	black --line-length 100 tests
 
-install:
-	pip install .
-
 linter:
 	$(call lint, ${module})
 	$(call lint, tests)
 
-mutants:
+mutants: setup
 	mutmut run --paths-to-mutate ${module}
 
-tests: install
+setup:
+	pip install .
+
+tests:
 	pytest --verbose
