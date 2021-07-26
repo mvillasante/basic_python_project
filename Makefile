@@ -6,7 +6,6 @@ all: check coverage mutants
 		clean \
 		coverage \
 		format \
-		install \
 		linter \
 		mutants \
 		setup \
@@ -48,9 +47,6 @@ format:
 	black --line-length 100 ${module}
 	black --line-length 100 tests
 
-install:
-	pip install .
-
 linter:
 	$(call lint, ${module})
 	$(call lint, tests)
@@ -58,7 +54,8 @@ linter:
 mutants: setup
 	mutmut run --paths-to-mutate ${module}
 
-setup: install
+setup:
+	pip install .
 
 tests:
 	pytest --verbose
