@@ -55,7 +55,7 @@ mutants: setup
 	mutmut run --paths-to-mutate ${module}
 
 setup:
-	pip install .
+	pip install --editable .
 
 tests:
 	pytest --verbose
