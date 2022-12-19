@@ -9,4 +9,6 @@ classifiers = [ "License :: OSI Approved :: GNU General Public License v3 or lat
 description-file = "README.md"
 home-page = "https://github.com/IslasGECI/dummy_transformations"
 module = "dummy_transformations"
+requires = [
+]
 requires-python=">=3.9"
