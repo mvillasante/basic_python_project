@@ -10,8 +10,8 @@ Para usar este repo como plantilla debemos hacer lo siguiente:
 1. Reemplaza `dummy_transformations` por el nombre del nuevo módulo en:
     - `Makefile`
     - `pyproject.toml`
-    - `tests\test_transformation.py`
-1. Renombra el archivo `dummy_transformations\transformation.py` al nombre del primer archivo del
+    - `tests\test_transformations.py`
+1. Renombra el archivo `dummy_transformations\transformations.py` al nombre del primer archivo del
    nuevo módulo
 1. Cambia la descripción del archivo `dummy_transformations\__init__.py`
 1. Renombra el directorio `dummy_transformations` al nombre del nuevo módulo
