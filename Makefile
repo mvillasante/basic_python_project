@@ -43,7 +43,7 @@ clean:
 
 coverage: setup
 	pytest --cov=${module} --cov-report=xml --verbose && \
-	codecov --token=${codecov_token}
+	coverage report --show-missing
 
 format:
 	black --line-length 100 ${module}
