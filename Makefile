@@ -77,13 +77,13 @@ red: format
 
 green: format
 	pytest --verbose \
-	&& (git add gatos/*.py tests/*.py && git commit -m "✅ Pass tests") \
-	|| git restore gatos/*.py
+	&& (git add ${module}/*.py tests/*.py && git commit -m "✅ Pass tests") \
+	|| git restore ${module}/*.py
 	chmod g+w -R .
 
 refactor: format
 	pytest --verbose \
-	&& (git add gatos/*.py tests/*.py && git commit -m "♻️  Refactor") \
-	|| git restore gatos/*.py tests/*.py
+	&& (git add ${module}/*.py tests/*.py && git commit -m "♻️  Refactor") \
+	|| git restore ${module}/*.py tests/*.py
 	chmod g+w -R .
 
