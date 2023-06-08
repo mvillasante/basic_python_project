@@ -50,6 +50,9 @@ format:
 	black --line-length 100 tests
 
 init: setup tests
+	git config --global --add safe.directory /workdir
+	git config --global user.name "Ciencia de Datos • GECI"
+	git config --global user.email "ciencia.datos@islas.org.mx"
 
 install:
 	pip install --editable .
