@@ -7,16 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.4.0] - 2023-08-31
+## [0.4.1] - 2024-04-31
 
 ### Added
 
 ### Fixed
 
 ### Changed
+- Fix repo path
+- Update actions
 
 ### Removed
 
+## [0.4.0] - 2023-08-31
 
-[unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD
-[0.0.1]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v0.0.1
+
+[unreleased]: https://github.com/IslasGECI/dummy_transformations/compare/v1.1.1...HEAD
+[0.0.1]: https://github.com/IslasGECI/dummy_transformations/releases/tag/v0.0.1
