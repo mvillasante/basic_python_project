@@ -13,7 +13,7 @@ all: check coverage mutants
 		setup \
 		tests
 
-module = dummy_transformations
+module = module
 codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
 
 define lint
@@ -51,8 +51,8 @@ format:
 
 init: setup tests
 	git config --global --add safe.directory /workdir
-	git config --global user.name "Ciencia de Datos • GECI"
-	git config --global user.email "ciencia.datos@islas.org.mx"
+	git config --global user.name "Mario VB"
+	git config --global user.email "mario.villasante@islas.org.mx"
 
 install:
 	pip install --editable .
