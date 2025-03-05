@@ -1,4 +1,4 @@
-import dummy as dt
+import module as dt
 
 
 def test_add_offset():
