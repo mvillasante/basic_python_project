@@ -55,6 +55,7 @@ jobs:
         tag: "latest"
         message: "Latest release"
         force_push_tag: true
+name: Build and publish Python distributions to PyPI 🐍📦
 on:
   workflow_dispatch:
   jobs:
