@@ -55,7 +55,9 @@ jobs:
         tag: "latest"
         message: "Latest release"
         force_push_tag: true
-
+on:
+  workflow_dispatch:
+  jobs:
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI
     needs: test-module
